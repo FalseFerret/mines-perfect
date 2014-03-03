@@ -72,14 +72,7 @@ void SmileyCtrl::act()
   if      (m_game->m_board->gameIsWon())           new_smiley = s_smiley_sunglass_bmp;
   else if (m_game->m_board->gameIsLost())          new_smiley = s_smiley_worry_bmp;
   else if (m_game->m_board->getState() == BEFORE)  new_smiley = s_smiley_happy_bmp;
-  else if (m_game->m_board->getState() == PLAY)
-  {
-    if      (m_game->m_board->getCurStage() == 0)   new_smiley = s_smiley_happy_bmp;
-    else if (m_game->m_board->getCurStage() == 1)   new_smiley = s_smiley_1eye_bmp;
-    else if (m_game->m_board->getCurStage() == 2)   new_smiley = s_smiley_2eyes_bmp;
-    else if (m_game->m_board->getCurStage() == 3)   new_smiley = s_smiley_3eyes_bmp;
-    else if (m_game->m_board->getCurStage() == 4)   new_smiley = s_smiley_4eyes_bmp;
-  }
+  else if (m_game->m_board->getState() == PLAY)    new_smiley = s_smiley_happy_bmp;
 
   setUpBitmap   (new_smiley);
   setDownBitmap (s_smiley_ooh_bmp);
