@@ -477,7 +477,7 @@ class TimerImpl : public MinesPerfect::Timer, public wxTimer
 {
 public:
   TimerImpl() : wxTimer() { num_notifies = 0; }
-
+  Sound* m_timer_sound = CreateSound ("timer");
   bool isRunning() const { return wxTimer::IsRunning(); }
 
   int getMSecs() const
@@ -521,6 +521,7 @@ public:
     {
       num_notifies = num2;
       main_win->game->showTime(num_notifies);
+      m_timer_sound->play();
     }
   }
 
